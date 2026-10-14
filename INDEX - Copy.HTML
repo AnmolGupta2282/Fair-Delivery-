@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fair Delivery | Zero Commission Food Delivery</title>
+    <!-- Tailwind CSS and Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hero-pattern {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        @keyframes softPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .animate-soft-pulse {
+            animation: softPulse 3s infinite ease-in-out;
+        }
+        /* Delivery Scooter Animation */
+        @keyframes driveScooter {
+            0% { transform: translateX(-20px); opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { transform: translateX(30px); opacity: 0; }
+        }
+        .animate-scooter {
+            animation: driveScooter 3s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+    <!-- Top Navigation & Language Switcher -->
+    <nav class="bg-emerald-950 text-white py-4 px-6 border-b border-emerald-900 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="bg-emerald-500 text-slate-950 font-black px-2.5 py-1 rounded-lg text-sm shadow-md">FD</span>
+                <span class="font-extrabold text-lg tracking-tight">Fair Delivery</span>
+            </div>
+            <div class="flex items-center gap-2 bg-emerald-900/80 border border-emerald-700/50 p-1 rounded-xl">
+                <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-emerald-500 text-slate-950 shadow-sm">English</button>
+                <button onclick="setLanguage('hi')" id="btn-hi" class="px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-emerald-200 hover:text-white">हिन्दी</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Delivery Animation and Indian Context Photo -->
+    <header class="relative bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950 text-white overflow-hidden py-16 lg:py-24">
+        <div class="absolute inset-0 hero-pattern opacity-30"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center gap-3 bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider mb-6 shadow-inner">
+                    <!-- Moving Delivery Animation Badge -->
+                    <span class="text-base animate-scooter">🛵</span>
+                    <span data-key="launchBadge">🚀 Launching Soon</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] mb-6" data-key="heroTitle">
+                    Welcome to Fair Delivery. <br><span class="text-emerald-400">Zero Commission.</span>
+                </h1>
+                <p class="text-lg lg:text-xl text-emerald-100/90 mb-8 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed" data-key="heroSubtitle">
+                    We don't charge restaurants 30% commissions. Instead, we keep food affordable with a transparent, flat service fee per order.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#survey-section" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold px-8 py-4 rounded-2xl shadow-xl shadow-emerald-900/30 transition-all transform hover:-translate-y-0.5 text-center text-base animate-soft-pulse">
+                        <span data-key="ctaButton">Take 1-Min Survey & Join Waitlist</span> ➔
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Graphic Card Stack with Indian Street/Food Delivery Theme Photo -->
+            <div class="lg:col-span-5 w-full">
+                <div class="relative mx-auto max-w-md bg-white/10 backdrop-blur-2xl border border-white/20 p-6 sm:p-8 rounded-[2.5rem] shadow-2xl">
+                    <!-- Indian Local Food / Delivery Context Photo -->
+                    <div class="mb-6 rounded-2xl overflow-hidden shadow-lg border border-white/20 relative group h-44">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Indian Food and Local Delivery" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
+                            <span class="text-xs font-bold text-white bg-emerald-500/80 px-2.5 py-1 rounded-lg backdrop-blur-md flex items-center gap-1.5">
+                                <span>⚡</span> Direct Local Delivery Support
+                            </span>
+                        </div>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2">
+                        <span>✨</span> <span data-key="whyTitle">Why Fair Delivery?</span>
+                    </h3>
+                    <ul class="space-y-3 text-emerald-100 text-sm lg:text-base">
+                        <li class="flex items-start gap-3 bg-white/5 p-3 rounded-2xl border border-white/10">
+                            <span class="bg-emerald-500 text-slate-950 font-black rounded-xl w-5 h-5 flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                            <span data-key="why1"><strong>Zero Commissions</strong> for local restaurants.</span>
+                        </li>
+                        <li class="flex items-start gap-3 bg-white/5 p-3 rounded-2xl border border-white/10">
+                            <span class="bg-emerald-500 text-slate-950 font-black rounded-xl w-5 h-5 flex items-center justify-center shrink-0 mt-0.5">✓</span>
+                            <span data-key="why2">Lower menu prices than regular apps.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Transparent Pricing Section -->
+    <section class="py-24 max-w-5xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight" data-key="pricingHeader">How Our Flat Pricing Works</h2>
+            <p class="text-slate-600 text-lg" data-key="pricingSub">No hidden surge fees or percentage cuts. Just a predictable, tiny flat service fee plus standard GST.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+            <!-- Tier 1 -->
+            <div class="bg-white border border-slate-200/80 p-8 lg:p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-10 transform translate-x-8 -translate-y-8 pointer-events-none">
+                    <img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=300&q=80" alt="Snack" class="rounded-full w-full h-full object-cover">
+                </div>
+                <div>
+                    <div class="text-xs font-extrabold uppercase tracking-widest text-emerald-600 mb-3 bg-emerald-50 w-max px-3 py-1 rounded-full" data-key="tier1Tag">For Smaller Orders</div>
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900" data-key="tier1Title">Orders Under ₹250</h3>
+                    <div class="text-5xl font-black text-slate-900 mb-6 tracking-tight">₹15 <span class="text-base font-semibold text-slate-400">+ GST</span></div>
+                    <p class="text-slate-600 mb-8 leading-relaxed" data-key="tier1Desc">Perfect for quick snacks, single-person meals, or morning coffee runs.</p>
+                </div>
+                <div class="border-t border-slate-100 pt-5 text-sm text-slate-500 flex justify-between items-center">
+                    <span data-key="commissionLabel" class="font-medium">Platform Commission:</span>
+                    <span class="font-extrabold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg" data-key="commissionZero">₹0 (Zero)</span>
+                </div>
+            </div>
+
+            <!-- Tier 2 -->
+            <div class="bg-gradient-to-b from-white to-emerald-50/30 border-2 border-emerald-500 p-8 lg:p-10 rounded-[2.5rem] shadow-xl relative flex flex-col justify-between overflow-hidden">
+                <div class="flex justify-between items-start gap-4 mb-3">
+                    <div class="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 w-max px-3 py-1 rounded-full" data-key="tier2Tag">For Family Feasts & Groups</div>
+                    <span class="bg-emerald-500 text-slate-950 text-xs font-black px-3 py-1 rounded-xl shadow-sm uppercase tracking-wider shrink-0" data-key="popularBadge">
+                        Most Popular 🔥
+                    </span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900" data-key="tier2Title">Orders Above ₹250</h3>
+                    <div class="text-5xl font-black text-slate-900 mb-6 tracking-tight">₹21 <span class="text-base font-semibold text-slate-400">+ GST</span></div>
+                    <p class="text-slate-600 mb-8 leading-relaxed" data-key="tier2Desc">Great for dinner orders, family get-togethers, and heavy feasts.</p>
+                </div>
+                <div class="border-t border-emerald-100 pt-5 text-sm text-slate-500 flex justify-between items-center">
+                    <span data-key="commissionLabel" class="font-medium">Platform Commission:</span>
+                    <span class="font-extrabold text-emerald-600 bg-emerald-100 px-3 py-1 rounded-lg" data-key="commissionZero">₹0 (Zero)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Survey / Call to Action Section -->
+    <section id="survey-section" class="py-24 bg-slate-100/80 border-t border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight" data-key="surveyHeader">Help Us Shape Fair Delivery</h2>
+            <p class="text-slate-600 text-lg mb-12 max-w-xl mx-auto leading-relaxed" data-key="surveySub">
+                We are currently building our Proof of Concept. Tell us what you think about commission-free food delivery by filling out our brief survey below.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch text-left">
+                
+                <!-- Customer Survey Box -->
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-slate-200 border border-slate-200/80 flex flex-col justify-between">
+                    <div class="mb-8 text-center">
+                        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner animate-soft-pulse">
+                            🛍️
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-900" data-key="customerTitle">Customer Survey</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed" data-key="customerSub">Takes 1 minute. Tell us about your ordering habits and secure your early-bird discount.</p>
+                    </div>
+                    <a id="customer-link" href="#" target="_blank" class="block w-full text-center bg-slate-900 hover:bg-emerald-500 hover:text-slate-950 text-white font-extrabold px-6 py-5 rounded-2xl shadow-lg transition-all text-base transform hover:-translate-y-0.5" data-key="customerBtn">
+                        Customer Form ➔
+                    </a>
+                </div>
+
+                <!-- Restaurant Partner Survey Box -->
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl shadow-slate-200 border border-slate-200/80 flex flex-col justify-between">
+                    <div class="mb-8 text-center">
+                        <div class="w-20 h-20 bg-teal-100 text-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner animate-soft-pulse">
+                            🏪
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-900" data-key="restaurantTitle">Restaurant Partner Survey</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed" data-key="restaurantSub">Takes 1 minute. Apply for our zero-risk, commission-free pilot program.</p>
+                    </div>
+                    <a id="restaurant-link" href="#" target="_blank" class="block w-full text-center bg-slate-900 hover:bg-emerald-500 hover:text-slate-950 text-white font-extrabold px-6 py-5 rounded-2xl shadow-lg transition-all text-base transform hover:-translate-y-0.5" data-key="restaurantBtn">
+                        Restaurant Form ➔
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 py-12 text-center text-sm border-t border-slate-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="font-bold text-white text-base mb-2">Fair Delivery</p>
+            <p data-key="footerDesc">Empowering local food culture with zero commissions.</p>
+        </div>
+    </footer>
+
+    <!-- Multilingual Translation Script -->
+    <script>
+        // Form Links
+        const formLinks = {
+            en: {
+                customer: "https://docs.google.com/forms/d/e/1FAIpQLSdPkGrzBh4IYcqxcJoV06J1Cv1k8uzzHIXBA6BFJPQFdvX2mQ/viewform?usp=header",
+                restaurant: "https://docs.google.com/forms/d/e/1FAIpQLScMH5SY3MRDkaG2Ofazc-uyOYZK-BTFsiuB_Tcm7vGwF6tBoQ/viewform?usp=header"
+            },
+            hi: {
+                customer: "https://docs.google.com/forms/d/e/1FAIpQLSe0_ZzqJcLmzyUeLQCKONgHOdLsRp3Pe-MPbKAqhHL-JY3_yA/viewform?usp=header",
+                restaurant: "https://docs.google.com/forms/d/e/1FAIpQLScisq3RND7PeIiMN-r3flCOojpIB2TjfeXfkoEd7YZQZIccnQ/viewform?usp=header"
+            }
+        };
+
+        const translations = {
+            en: {
+                launchBadge: "🚀 Launching Soon",
+                heroTitle: 'Welcome to Fair Delivery. <br><span class="text-emerald-400">Zero Commission.</span>',
+                heroSubtitle: "We don't charge restaurants 30% commissions. Instead, we keep food affordable with a transparent, flat service fee per order.",
+                ctaButton: "Take 1-Min Survey & Join Waitlist",
+                whyTitle: "Why Fair Delivery?",
+                why1: "<strong>Zero Commissions</strong> for local restaurants.",
+                why2: "Lower menu prices than regular apps.",
+                pricingHeader: "How Our Flat Pricing Works",
+                pricingSub: "No hidden surge fees or percentage cuts. Just a predictable, tiny flat service fee plus standard GST.",
+                tier1Tag: "For Smaller Orders",
+                tier1Title: "Orders Under ₹250",
+                tier1Desc: "Perfect for quick snacks, single-person meals, or morning coffee runs.",
+                tier2Tag: "For Family Feasts & Groups",
+                tier2Title: "Orders Above ₹250",
+                tier2Desc: "Great for dinner orders, family get-togethers, and heavy feasts.",
+                popularBadge: "Most Popular 🔥",
+                commissionLabel: "Platform Commission:",
+                commissionZero: "₹0 (Zero)",
+                surveyHeader: "Help Us Shape Fair Delivery",
+                surveySub: "We are currently building our Proof of Concept. Tell us what you think about commission-free food delivery by filling out our brief survey below.",
+                customerTitle: "Customer Survey",
+                customerSub: "Takes 1 minute. Tell us about your ordering habits and secure your early-bird discount.",
+                customerBtn: "Customer Form ➔",
+                restaurantTitle: "Restaurant Partner Survey",
+                restaurantSub: "Takes 1 minute. Apply for our zero-risk, commission-free pilot program.",
+                restaurantBtn: "Restaurant Form ➔",
+                footerDesc: "Empowering local food culture with zero commissions."
+            },
+            hi: {
+                launchBadge: "🚀 जल्द आ रहा है",
+                heroTitle: 'फेयर डिलीवरी में आपका स्वागत है। <br><span class="text-emerald-400">शून्य कमीशन (Zero Commission)</span>',
+                heroSubtitle: "हम रेस्तरां से 30% कमीशन नहीं लेते हैं। इसके बजाय, हम प्रति ऑर्डर एक पारदर्शी और फिक्स सर्विस शुल्क के साथ भोजन को किफायती रखते हैं।",
+                ctaButton: "1-मिनट का सर्वे भरें और वेटलिस्ट से जुड़ें",
+                whyTitle: "फेयर डिलीवरी क्यों चुनें?",
+                why1: "स्थानीय रेस्तरां के लिए <strong>शून्य कमीशन</strong>।",
+                why2: "पारंपरिक ऐप्स की तुलना में कम मेनू कीमतें।",
+                pricingHeader: "हमारी फिक्स प्राइसिंग कैसे काम करती है",
+                pricingSub: "कोई छिपा हुआ शुल्क या प्रतिशत कटौती नहीं। मानक जीएसटी के साथ बस एक अनुमानित, छोटा फ्लैट सर्विस शुल्क।",
+                tier1Tag: "छोटे ऑर्डर्स के लिए",
+                tier1Title: "₹250 से कम के ऑर्डर",
+                tier1Desc: "त्वरित स्नैक्स, अकेले खाने के लिए भोजन, या सुबह की कॉफी के लिए बिल्कुल सही।",
+                tier2Tag: "पारिवारिक दावत और समूहों के लिए",
+                tier2Title: "₹250 से ऊपर के ऑर्डर",
+                tier2Desc: "डिनर ऑर्डर, पारिवारिक मिलन-सार समारोह और बड़ी पार्टियों के लिए बेहतरीन।",
+                popularBadge: "सबसे लोकप्रिय 🔥",
+                commissionLabel: "प्लेटफॉर्म कमीशन:",
+                commissionZero: "₹0 (शून्य)",
+                surveyHeader: "फेयर डिलीवरी को आकार देने में हमारी मदद करें",
+                surveySub: "हम वर्तमान में अपना प्रूफ ऑफ कॉन्सेप्ट (POC) बना रहे हैं। नीचे दिए गए हमारे संक्षिप्त सर्वेक्षण को भरकर बताएं कि आप कमीशन-मुक्त फूड डिलीवरी के बारे में क्या सोचते हैं।",
+                customerTitle: "ग्राहक सर्वेक्षण",
+                customerSub: "1 मिनट का समय लगता है। हमें अपनी ऑर्डर करने की आदतों के बारे में बताएं और अपना अर्ली-बर्ड डिस्काउंट सुरक्षित करें।",
+                customerBtn: "ग्राहक फॉर्म ➔",
+                restaurantTitle: "रेस्तरां पार्टनर सर्वेक्षण",
+                restaurantSub: "1 मिनट का समय लगता है। हमारे शून्य-जोखिम, कमीशन-मुक्त पायलट प्रोग्राम के लिए आवेदन करें।",
+                restaurantBtn: "रेस्तरां फॉर्म ➔",
+                footerDesc: "शून्य कमीशन के साथ स्थानीय फूड संस्कृति को सशक्त बनाना।"
+            }
+        };
+
+        function setLanguage(lang) {
+            // Update Active Buttons
+            if (lang === 'en') {
+                document.getElementById('btn-en').className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-emerald-500 text-slate-950 shadow-sm";
+                document.getElementById('btn-hi').className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-emerald-200 hover:text-white";
+            } else {
+                document.getElementById('btn-hi').className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all bg-emerald-500 text-slate-950 shadow-sm";
+                document.getElementById('btn-en').className = "px-3 py-1.5 text-xs font-bold rounded-lg transition-all text-emerald-200 hover:text-white";
+            }
+
+            // Update Text content
+            const elements = document.querySelectorAll('[data-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update Form Links Dynamically
+            document.getElementById('customer-link').href = formLinks[lang].customer;
+            document.getElementById('restaurant-link').href = formLinks[lang].restaurant;
+        }
+
+        // Initialize with English on load
+        window.onload = () => setLanguage('en');
+    </script>
+
+</body>
+</html>
